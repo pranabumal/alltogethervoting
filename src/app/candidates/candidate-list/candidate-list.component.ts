@@ -15,9 +15,7 @@ export class CandidateListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.candidates=[
-            new Candidate(1,'Pranab sarker',26,1675550197,'He is Good'),
-        ]
+
     }
     onSubmit(ngForm){
         this.dataServide.addCandicate(ngForm.value);
