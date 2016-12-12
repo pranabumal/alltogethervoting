@@ -1,0 +1,9 @@
+<div class="col-lg-12">
+    <div class="col-lg-6">
+        <candidate-list (selectCandidateEvent)="selectedCandidate = $event"></candidate-list>
+    </div>
+    <div class="col-lg-6">
+        <candidate-details [currentCandidate]="selectedCandidate"></candidate-details>
+    </div>
+</div>
+

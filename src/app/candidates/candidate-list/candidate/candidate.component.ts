@@ -1,14 +1,13 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Product} from "../../product";
+import {Candidate} from "../../candidate";
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'candidate',
+  templateUrl: 'candidate.component.html',
 })
-export class ProductComponent implements OnInit {
+export class CandidateComponent implements OnInit {
 
-  @Input() product: Product;
+  @Input() candidate: Candidate;
 
   constructor() { }
 
@@ -17,11 +16,8 @@ export class ProductComponent implements OnInit {
 
   getName()
   {
-    return this.product.name;
+    return this.candidate.name;
   }
 
-  getPrice(){
-    return this.product.price;
-  }
 
 }
