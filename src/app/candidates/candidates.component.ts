@@ -10,5 +10,7 @@ export class CandidatesComponent implements OnInit{
 
     ngOnInit() {
 
+        this.selectedCandidate = new Candidate(1,'Pranab sarker',26,1675550197,'He is Good');
+
     }
 }
