@@ -27,6 +27,7 @@
 
 
 <div class="col-md-6">
+    <h3>Candidate List</h3>
     <candidate *ngFor="let candidate of candidates" (click)="onCandidateSelected(candidate)" [candidate]="candidate">
     </candidate>
 
