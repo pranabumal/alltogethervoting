@@ -3,22 +3,22 @@
     <form (ngSubmit)="onSubmit(candidateForm)" #candidateForm="ngForm" novalidate>
         <div class="form-group">
             <label>Name</label>
-            <input id="name" name="name" #name required class="form-control" ngModel />
+            <input name="name" #name required class="form-control"  [ngModel]="candidates.name"/>
         </div>
         <div class="form-group">
             <label>Age</label>
-            <input id="age" #age name="age" class="form-control" ngModel />
+            <input  #age name="age" class="form-control"  [ngModel]="candidates.age"/>
         </div>
         <div class="form-group">
             <label>Phone</label>
-            <input id="phone" name="phone" #phone class="form-control" ngModel/>
+            <input name="phone" #phone class="form-control"  [ngModel]="candidates.phone"/>
         </div>
         <div class="form-group">
             <label>Description</label>
-            <input id="description" name="description" required #description class="form-control" ngModel/>
+            <input name="description" required #description class="form-control"  [ngModel]="candidates.description"/>
         </div>
         <div>
-            <input hidden id="id" name="id" #id value="{{candidates.length + 1}}" ngModel />
+            <input hidden name="id" #id value="{{candidates.length + 1}}" ngModel />
         </div>
 
         <input type="submit" value="Save" class="btn btn-primary">
