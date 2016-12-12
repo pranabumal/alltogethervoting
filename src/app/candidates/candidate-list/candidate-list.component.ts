@@ -1,5 +1,6 @@
 import {Component, OnInit, EventEmitter, Output,Input} from '@angular/core';
 import {Candidate} from "../candidate";
+import {DataService} from "../../data.service";
 
 @Component({
     selector: 'candidate-list',
@@ -9,16 +10,14 @@ export class CandidateListComponent implements OnInit {
 
     candidates: Candidate[] = [];
     @Output() selectCandidateEvent = new EventEmitter<Candidate>();
-    constructor() {
+    constructor(private dataServide: DataService) {
+        this.candidates = this.dataServide.getCandidates();
     }
 
     ngOnInit() {
-        this.candidates=[
-            new Candidate(1,'Pranab sarker',26,1675550197,'He is Good'),
-        ]
     }
     onSubmit(ngForm){
-        this.candidates.push(ngForm.value);
+        this.dataServide.addCandicate(ngForm.value);
     }
 
     onCandidateSelected(candidate: Candidate) {

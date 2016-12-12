@@ -10,6 +10,7 @@ import {CandidateDetailsComponent} from "./candidates/candidate-details/candidat
 import {CandidateComponent} from "./candidates/candidate-list/candidate/candidate.component";
 import {AppRoute} from "./app.route";
 import {HomeComponent} from "./home/home.component";
+import {DataService} from "./data.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {HomeComponent} from "./home/home.component";
     HttpModule,
     AppRoute
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
