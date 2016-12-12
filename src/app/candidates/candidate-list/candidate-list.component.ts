@@ -20,9 +20,6 @@ export class CandidateListComponent implements OnInit {
     onSubmit(ngForm){
         this.candidates.push(ngForm.value);
     }
-    addCandidate(id,name,age,phone,description){
-        this.candidates.push(new Candidate(id,name,age,phone,description));
-    }
 
     onCandidateSelected(candidate: Candidate) {
         this.selectCandidateEvent.emit(candidate);
