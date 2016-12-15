@@ -1,6 +1,6 @@
 <div class="col-md-6">
     <h3>New Candidate Add</h3>
-    <form (ngSubmit)="onSubmit(candidateForm)" #candidateForm="ngForm" novalidate>
+    <form (ngSubmit)="onSubmit(candidateForm.value)" #candidateForm="ngForm" novalidate>
         <div class="form-group">
             <label>Name</label>
             <input name="name" #name required class="form-control"  [ngModel]="candidates.name"/>
@@ -17,10 +17,6 @@
             <label>Description</label>
             <input name="description" required #description class="form-control"  [ngModel]="candidates.description"/>
         </div>
-        <div>
-            <input hidden name="id" #id value="{{candidates.length + 1}}" ngModel />
-        </div>
-
         <input type="submit" value="Save" class="btn btn-primary">
     </form>
 </div>

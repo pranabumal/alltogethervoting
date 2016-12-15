@@ -10,15 +10,15 @@ export class CandidateListComponent implements OnInit {
 
     candidates: Candidate[] = [];
     @Output() selectCandidateEvent = new EventEmitter<Candidate>();
-    constructor(private dataServide: DataService) {
-        this.candidates = this.dataServide.getCandidates();
+    constructor(private dataService: DataService) {
+        this.candidates = this.dataService.getCandidates();
     }
 
     ngOnInit() {
 
     }
-    onSubmit(ngForm){
-        this.dataServide.addCandicate(ngForm.value);
+    onSubmit(formValue){
+        this.dataService.addCandicate(new Candidate(formValue));
     }
 
     onCandidateSelected(candidate: Candidate) {

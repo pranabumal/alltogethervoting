@@ -1,0 +1,28 @@
+
+
+<!--<h3>Candidate List</h3>-->
+<!--<candidate *ngFor="let candidate of candidates" (click)="onSelect(candidate)" [candidate]="candidate">-->
+<!--</candidate>-->
+
+
+<div class="row" *ngIf="candidates.length > 0">
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <h4>Cadidates List</h4>
+            <candidate *ngFor="let candidate of candidates" (click)="onSelect(candidate)" [candidate]="candidate">
+            </candidate>
+        </div>
+        <div class="col-md-10">
+            <h4>Voting Result</h4>
+            <span  *ngFor="let candidate of candidates" class="result_list">
+                <div *ngFor="let loop of candidate.voteCount" style="display: inline-block">
+                    <span *ngIf="candidate.win===true" class="vote" style="background-color: green;" ></span>
+                    <span *ngIf="candidate.win===false" class="vote" style="background-color: red;" ></span>
+                    <span *ngIf="candidate.win===null" class="vote" style="background-color: blue;" ></span>
+                </div>
+                <span style="vertical-align: super;" >Total Vote:{{candidate.voteCount.length}}</span>
+                <span style="vertical-align: super;color:green;" *ngIf="candidate.win===true">  #Wining</span>
+            </span>
+        </div>
+    </div>
+</div>

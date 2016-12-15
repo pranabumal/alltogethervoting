@@ -11,6 +11,7 @@ import {CandidateComponent} from "./candidates/candidate-list/candidate/candidat
 import {AppRoute} from "./app.route";
 import {HomeComponent} from "./home/home.component";
 import {DataService} from "./data.service";
+import {VotingComponent} from "./votingRoom/voting.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {DataService} from "./data.service";
     CandidateListComponent,
     CandidateDetailsComponent,
     CandidateComponent,
+    VotingComponent,
     HomeComponent
   ],
   imports: [
