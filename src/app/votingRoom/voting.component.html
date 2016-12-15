@@ -16,9 +16,9 @@
             <h4>Voting Result</h4>
             <span  *ngFor="let candidate of candidates" class="result_list">
                 <div *ngFor="let loop of candidate.voteCount" style="display: inline-block">
-                    <span *ngIf="candidate.win===true" class="vote" style="background-color: green;" ></span>
-                    <span *ngIf="candidate.win===false" class="vote" style="background-color: red;" ></span>
-                    <span *ngIf="candidate.win===null" class="vote" style="background-color: blue;" ></span>
+                    <span *ngIf="candidate.win===true" class="vote" style="background-color: #1e9c1e;" ></span>
+                    <span *ngIf="candidate.win===false" class="vote" style="background-color: #bd1010;" ></span>
+                    <span *ngIf="candidate.win===null" class="vote" style="background-color: #564d9a;" ></span>
                 </div>
                 <span style="vertical-align: super;" >Total Vote:{{candidate.voteCount.length}}</span>
                 <span style="vertical-align: super;color:green;" *ngIf="candidate.win===true">  #Wining</span>
