@@ -1,0 +1,9 @@
+<div class="col-lg-12">
+    <div class="col-lg-6">
+        <user-list (selectUserEvent)="selectedUser = $event"></user-list>
+    </div>
+    <div class="col-lg-6">
+        <user-details [currentUser]="selectedUser"></user-details>
+    </div>
+</div>
+

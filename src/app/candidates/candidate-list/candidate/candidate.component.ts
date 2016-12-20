@@ -15,10 +15,4 @@ export class CandidateComponent implements OnInit {
   ngOnInit() {
   }
 
-  getName()
-  {
-    return this.candidate.name;
-  }
-
-
 }

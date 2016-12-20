@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Candidate} from "./candidates/candidate";
+import {User} from "./users/user";
 
 @Injectable()
 export class DataService {
 
   candidates: Candidate[] = [];
+  users: User[] = [];
 
   constructor() { }
 
@@ -14,6 +16,13 @@ export class DataService {
 
   getCandidates(){
     return this.candidates;
+  }
+  addUser(data){
+    this.users.push(data);
+  }
+
+  getUsers(){
+    return this.users;
   }
 
 }
