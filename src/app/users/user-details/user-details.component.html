@@ -12,6 +12,13 @@
         <label>Password</label>
         <span class="form-control">{{ currentUser?.password }}</span>
     </div>
+    <div class="form-group">
+        <label>Contact Numbers</label>
+        <div *ngFor="let contact of currentUser?.contactNumbers" class="col-md-12">
+            <span class="form-control col-md-8" style="width: 50%;text-align: center">{{ contact.number }}</span>
+            <span class="form-control col-md-4" style="width: 40%;text-align: center">{{ contact.type }}</span>
+        </div>
+    </div>
 
 
 </div>

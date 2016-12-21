@@ -16,12 +16,34 @@
 
         <div class="form-group" [ngClass]="{'error': userForm.get('password').invalid && userForm.get('password').dirty}">
             <label>Password</label>
-            <input type="text" class="form-control" formControlName="password">
+            <input type="password" class="form-control" formControlName="password">
         </div>
 
         <div class="form-group" [ngClass]="{'error': userForm.get('confirmPassword').invalid && userForm.get('confirmPassword').dirty}">
             <label>Confirm Password</label>
-            <input type="text" class="form-control" formControlName="confirmPassword">
+            <input type="password" class="form-control" formControlName="confirmPassword">
+        </div>
+
+        <div formArrayName="contactNumbers">
+            <div class="form-group">
+                <label>Contact Numbers</label>
+                <button type="button" (click)="addContactNumber()" class="btn btn-sm">Add more</button>
+            </div>
+            <div class="form-group"  *ngFor="let number of userForm.get('contactNumbers').controls; let i = index">
+                <div class="row" formGroupName="{{i}}">
+                    <input type="text" formControlName="number" class="form-control col-md-4" style="width: 50%">
+                    <select formControlName="type" class="form-control  col-md-4" style="width: 30%">
+                        <option value="">type</option>
+                        <option>Bangla Link</option>
+                        <option>Airtel</option>
+                        <option>Robi</option>
+                        <option>Grammen Phone</option>
+                        <option>Teletalk</option>
+                        <option>Citycell</option>
+                    </select>
+                    <button class="btn btn-danger" (click)="removePhoneNumber(i)">X</button>
+                </div>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save</button>

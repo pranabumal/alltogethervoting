@@ -1,7 +1,7 @@
 import {Component, OnInit, EventEmitter, Output,Input} from '@angular/core';
 import {User} from "../user";
 import {DataService} from "../../data.service";
-import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {FormGroup, FormControl, Validators, FormArray} from "@angular/forms";
 @Component({
     selector: 'user-list',
     templateUrl: 'user-list.component.html'
@@ -28,10 +28,25 @@ export class UserListComponent implements OnInit {
         this.userForm = new FormGroup({
             'username': new FormControl('', [Validators.required]),
             'email': new FormControl('', [Validators.required, this.validateEmail]),
+            'contactNumbers': new FormArray([UserListComponent.getPhoneNumberFormGroup()]),
         });
 
         this.userForm.addControl('password', new FormControl('', [Validators.required]));
         this.userForm.addControl('confirmPassword', new FormControl('', [Validators.required, this.passwordMatch.bind(this)]));
+    }
+    addContactNumber() {
+        this.userForm.get("contactNumbers").push(UserListComponent.getPhoneNumberFormGroup());
+    }
+
+    private static getPhoneNumberFormGroup() {
+        return new FormGroup({
+            'number': new FormControl('', [Validators.required]),
+            'type': new FormControl('', [Validators.required]),
+        });
+    }
+
+    removePhoneNumber(i) {
+        this.userForm.get("contactNumbers").removeAt(i);
     }
 
     validateEmail(c:FormControl) {
